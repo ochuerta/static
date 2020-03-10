@@ -10,7 +10,8 @@ pipeline {
                         ls -ld
                         ls -lah
                      '''
-                     s3Upload(file:'index.html', bucket:'jenkins-build-devops', path:'index.html')
+                     sh 'ls -ld'
+                     s3Upload(file:'index.html', bucket:'jenkins-build-devops', path:'.')
                 }
             }
         }
