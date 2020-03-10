@@ -1,6 +1,6 @@
 pipeline {
-     agent any
-     stages {
+    agent any
+    stages {
         stage ('Upload to AWS') {
             steps {
                 withAWS(region:'us-west-2',credentials:'aws-static') {
@@ -18,7 +18,7 @@ pipeline {
         stage ('Lint HTML') {
             steps {
                 withAWS(region:'us-west-2',credentials:'aws-static') {
-                    tidy -q -e *.html
+                    sh 'tidy -q -e *.html'
                 }
             }
         }
