@@ -7,7 +7,6 @@ pipeline {
                      sh 'echo "added s3Upload()"'
                      sh '''
                         echo "Multiline shell steps works too"
-                        ls -ld
                         ls -lah
                      '''
                      sh 'ls -ld'
